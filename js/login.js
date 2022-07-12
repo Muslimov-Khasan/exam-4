@@ -1,31 +1,44 @@
-"use strict";
-let elForm = document.querySelector(".login__form");
-let elUserName = document.querySelector(".user__name");
-let elUserPasword = document.querySelector(".user__password");
+const form = document.getElementById('form');
+let nameInput =  document.getElementById('input_name');
+let passwordInput =  document.getElementById('input_password');
+const formBtn = document.getElementById('form__btn');
 
-elForm.addEventListener("submit", function (evt) {
-  evt.preventDefault();
 
-  let userName = elUserName.value;
-  let userPasword = elUserPasword.value;
+form.addEventListener('submit', (event)=>{
+    event.preventDefault()
 
-  fetch("https://reqres.in/api/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email: userName,
-      password: userPasword,
-    }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-        if (data.token) {
-            window.localStorage.setItem("token", data.token);
-            window.location.replace("index.html")
-        } else {
-          alert("Login password xato kiritildi")
+    let user = {
+        email:nameInput.value,
+        password:passwordInput.value
+    }
+
+    
+    try {
+        login(user)
+    } catch (err) {
+        alert(err)
+        console.log(err.message);
+    }
+
+})
+
+async function login(user){
+    let login = await fetch('https://reqres.in/api/login', {
+        method:'POST',
+        body:JSON.stringify(user),
+        headers:{
+            "Content-type":'application/json'
         }
-    });
-});
+    })
+
+    if(login.status > 300){
+        alert('error')
+        return false
+    }
+
+    else{
+        login = await login.json()
+        window.localStorage.setItem('token', login.token)
+        window.location.replace('index.html')
+    }
+}

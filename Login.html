@@ -4,36 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/login.css">
     <title>Login</title>
+    <link rel="stylesheet" href="./css/login.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Noto+Sans&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- ===============MAIN===================== -->
-<main class="login__main">
-    <div class="container login__wrapper">
+    <form autocomplete="off" id="form" class="form">
+        <div class="form__logo">
+            <img class="form__logo__img" src="./img/form_logo.svg" alt="logo">
+        </div>
+        <div class="form__name">
+            <input type="text" class="form__name__input" placeholder="Email" id="input_name">
+        </div>
+        <div class="form__name form__password">
+            <input type="password" class="form__name__input" placeholder="password" id="input_password">
+        </div>
+        <button class="form__btn" type="submit" id="form__btn">LOGIN</button>
+        <a class="form__link" href="#">FORGOT PASSWORD?</a>
+        <p class="prompt--text">Email: eve.holt@reqres.in</p>
+        <p class="prompt--text">Password: 12345</p>
+    </form>
 
-        <form class="login__form">
-                <a class="login__form-logo" href="./login.html">
-                <img class="login__img" src="./images/logo.svg" alt="" width="226" height="44">
-            </a>
-
-            <div class="input-group mb-4 w-100">
-                <span class="input-group-text bg-transparent login__form-span"><img src="./images/user-icon.svg" alt="" width="auto" height="auto"></span>
-                <input type="text" class="user__name form-control bg-transparent shadow-none login__form-input" placeholder="Username" name="user name">
-            </div>
-
-            <div class="input-group mb-5 w-100">
-                <span class="input-group-text bg-transparent login__form-span"><img src="./images/lock-cin.svg" alt="" width="auto" height="auto"></span>
-                <input type="password" class="form-control bg-transparent user__password login__form-input" placeholder="Password" name="password">
-              </div>
-            
-              <button type="submit" class="w-100 login__btn bg-white mb-2">LOGIN</button>
-              <p class="form-text text-end d-flex text-white login__form-text">Forgot password?</p>
-            </form>
-    </div>
-</main>
-<!-- =========MAIN FINISHED=========== -->
-    <script src="./js/login.js"></script>
 </body>
+<script src="./js/login.js"></script>
 </html>
