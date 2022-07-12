@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Login</title>
+</head>
+<body>
+<!-- ===============MAIN===================== -->
+<main class="login__main">
+    <div class="container login__wrapper">
+
+        <form class="login__form">
+                <a class="login__form-logo" href="./login.html">
+                <img class="login__img" src="./images/logo.svg" alt="" width="226" height="44">
+            </a>
+
+            <div class="input-group mb-4 w-100">
+                <span class="input-group-text bg-transparent login__form-span"><img src="./images/user-icon.svg" alt="" width="auto" height="auto"></span>
+                <input type="text" class="user__name form-control bg-transparent shadow-none login__form-input" placeholder="Username" name="user name">
+            </div>
+
+            <div class="input-group mb-5 w-100">
+                <span class="input-group-text bg-transparent login__form-span"><img src="./images/lock-cin.svg" alt="" width="auto" height="auto"></span>
+                <input type="password" class="form-control bg-transparent user__password login__form-input" placeholder="Password" name="password">
+              </div>
+            
+              <button type="submit" class="w-100 login__btn bg-white mb-2">LOGIN</button>
+              <p class="form-text text-end d-flex text-white login__form-text">Forgot password?</p>
+            </form>
+    </div>
+</main>
+<!-- =========MAIN FINISHED=========== -->
+    <script src="./js/login.js"></script>
+</body>
+</html>
